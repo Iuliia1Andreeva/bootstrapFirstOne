@@ -32,3 +32,60 @@ nav {
     border-right: none;
 }
 
+.subheader {
+    height: 84px;
+    background: rgb(0, 0, 0, .6);
+    mix-blend-mode: normal;
+}
+
+.subheader__logo {
+    padding-top: 16px;
+}
+
+.subheader__oficial {
+    max-width: 100%;
+    font-weight: 200;
+    font-size: 13px;
+    opacity: .5;
+    color: #FFFFFF;
+    line-height: 20px;
+}
+
+.subheader__call {
+    margin-top: 22px;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: right;
+    opacity: .5;
+    color: #FFFFFF;
+}
+
+.subheader__phone {
+    text-decoration: none;
+    display: block;
+    margin-top: 8px;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 400px;
+    text-transform: uppercase;
+    text-align: right;
+    line-height: 24px;
+}
+
+.subheader__button {
+    margin-top: 19px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 46px;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21);
+    background: linear-gradient(0deg, #1EACC7 0%, #4CE2FF 100%);
+    box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+
+}
+
