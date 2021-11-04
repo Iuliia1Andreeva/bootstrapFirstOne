@@ -1,3 +1,4 @@
+$main-color: #1eacc7
 @mixin titles
     width: 115px
     margin: 0px auto
@@ -23,7 +24,11 @@
     text-align: center
     text-transform: uppercase
     color: #222222
-    
+
+=btn_hover
+    &:hover
+        background-image: none
+        background-color: $main-color
 *
     font-family: Roboto, sans-serif
 
@@ -62,8 +67,7 @@ nav
 
 .main-info__subheader
     height: 84px
-    background-color: black
-    opacity: 0.6
+    background-color: rgba(0, 0, 0, 0.6)
     mix-blend-mode: normal
 
 .main-info__subheader__logo
@@ -110,9 +114,11 @@ nav
     background: linear-gradient(0deg, #1EACC7 0%, #4CE2FF 100%)
     box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.12)
     border-radius: 4px
+    +btn_hover
+        
 
 .main-info
-    background: url('/src/img/uber_bg.png') no-repeat
+    background: url('/src/img/uber_bg.png') center (center / cover) no-repeat
 
 .main-info__promo__header
     margin-top: 45px
@@ -155,6 +161,7 @@ nav
     color: #FFFFFF
     border: none
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21)
+    +btn_hover
 
 .proses
     margin-top: 19px
@@ -246,18 +253,42 @@ nav
             color: #FFFFFF
             padding-top: 90px
         &__plus
+            display: flex
+            justify-content: center
+            align-items: center
             width: 26px
             height: 26px
             margin: 0 auto
             position: absolute
+            background-color: #000000
+            border-radius: 100%
             bottom: 35px
             left: 50%
             transform: translateX(-50%)
             cursor: pointer
+            &::before
+                content: ''
+                display: block
+                width: 14px
+                height: 2px
+                background-color: $main_color
+            &::after
+                position: absolute
+                left: 50%
+                transform: translateX(-50%)
+                content: ''
+                display: block
+                width: 2px
+                height: 14px
+                background-color: $main-color
+            &:hover
+                &:before, &::after
+                    background-color: pink
+                    transition: 0.3s
 
 .choose
     padding-top: 56px
-    background: url(../img/choose_bg.png)
+    background: url(../img/choose_bg.png) center (center / cover) no-repeat
     &__title
         @include titles
         background-color: white
@@ -285,4 +316,103 @@ nav
         color: #222222
         font-weight: 200
         padding-bottom: 125px
+
+.require
+    padding: 68px 0 84px 0
+    &__block
+        margin: 33px 0
+        &__nmb
+            margin-bottom: 0px
+            ul
+                li 
+                    &::before
+                        content: ''
+                        display: block
+                        position: absolute
+                        left: -32px
+                        top: 3px
+                        width: 21px
+                        height: 20px
+                        background: url(../img/check_red.png) center (center / cover) no-repeat
+                    
+    &__title
+        @include titles
+    &__header
+        @include header
+    &__list-title
+        font-size: 22px
+        line-height: 24px
+        color: #1CA8C3
+        &__pink
+            color: #FF5656
+
+    &__list
+        list-style-type: none
+        padding-left: 50px
+        margin-top: 22px
+        li
+            font-weight: 300
+            position: relative
+            font-size: 17px
+            line-height: 24px
+            margin-bottom: 10px
+            &::before
+                content: ''
+                display: block
+                position: absolute
+                left: -32px
+                top: 3px
+                width: 21px
+                height: 20px
+                background: url(../img/check_blue.png) center (center / cover) no-repeat
+    &__description
+        font-weight: 300;
+        font-size: 17px;
+        line-height: 24px;
+        color: #1CA8C3;
+.cities
+    padding-top: 48px
+    min-height: 716px
+    background-image: url(../img/world_bg.png) 
+    &__title
+        @include titles
+        background-color: #ffffff
+        p
+            color: black
+    &__header
+        @include header
+        color: #ffffff
+    &__subheader
+        color: #ffffff
+        text-align: center
+        font-weight: 300
+    &__view-all
+        margin-top: 450px
+        padding-bottom: 30px
+        p
+            text-align: center
+            text-transform: uppercase
+            a
+                text-decoration: none
+                color: #1CA8C3
+footer
+    display: flex
+    justify-content: space-between
+.social-sites
+    width: 160px
+    display: flex
+    justify-content: space-between
+    margin-top: 51px
+    &__item 
+        display: flex 
+        justify-content: center
+        align-items: center
+        margin: 0 4px 
+        width: 32px
+        height: 32px
+        background-color: #070716
+        border-radius: 100%
+
+
+
 
